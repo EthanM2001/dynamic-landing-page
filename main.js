@@ -27,16 +27,16 @@ const setImageAndGreeting = () => {
 
   if (hours < 12) {
     document.body.style.backgroundImage = "url(../images/morning.jpg)";
-    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundSize = "100% 100%";
     greeting.textContent = "Good Morning";
   } else if (hours >= 12 && hours < 18) {
     greeting.textContent = "Good Afternoon";
     document.body.style.backgroundImage = "url(../images/afternoon.jpg)";
-    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundSize = "100% 100%";
   } else {
     greeting.textContent = "Good Evening";
     document.body.style.backgroundImage = "url(../images/night.jpg)";
-    document.body.style.backgroundSize = "cover";
+    document.body.style.backgroundSize = "100% 100%";
     document.body.style.color = "white";
   }
 };
