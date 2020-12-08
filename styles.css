@@ -17,6 +17,7 @@ body {
 
 #time {
   font-size: 9rem;
+  margin-bottom: 2%;
 }
 
 #greeting {
@@ -25,4 +26,15 @@ body {
 
 #question {
   font-size: 2rem;
+  margin-top: 8%;
+}
+
+h2 {
+  opacity: 0.6;
+}
+
+@media (max-width: 700px) {
+  #time {
+    font-size: 6rem;
+  }
 }
