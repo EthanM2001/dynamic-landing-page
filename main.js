@@ -1,5 +1,35 @@
 let time = document.getElementById("time");
 let greeting = document.getElementById("greeting");
+let bottomLeft = document.getElementById("bottom-left");
+let bottomRight = document.getElementById("bottom-right");
+
+const getUserLocation = () => {
+  let location = navigator.geolocation.getCurrentPosition((position) => {
+    let longitude = position.coords.longitude;
+    longitude = Math.round(longitude);
+    let latitude = position.coords.latitude;
+    latitude = Math.round(latitude);
+    let apiKey = "a0f5ebe9dcdf4301c052f393f0ccb485";
+    fetch(
+      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
+    )
+      .then((response) => {
+        return response.json();
+      })
+      .then((data) => {
+        console.log(data.main);
+        let temp = data.main.temp;
+        let town = data.name;
+        let weather = data.weather[0].main;
+        let country = data.sys.country;
+        bottomLeft.innerHTML = town + ", " + country;
+        bottomRight.innerHTML = temp + ", " + weather;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
+  });
+};
 
 const showTime = () => {
   let today = new Date();
@@ -43,3 +73,4 @@ const setImageAndGreeting = () => {
 
 showTime();
 setImageAndGreeting();
+getUserLocation();
