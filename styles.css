@@ -39,9 +39,18 @@ h2 {
   }
 }
 
-html {
-  -webkit-background-size: cover;
-  -moz-background-size: cover;
-  -o-background-size: cover;
-  background-size: cover;
+#bottom-left {
+  font-size: 2rem;
+  position: fixed;
+  bottom: 1rem;
+  left: 1rem;
+  color: white;
+}
+
+#bottom-right {
+  font-size: 2rem;
+  position: fixed;
+  bottom: 1rem;
+  right: 1rem;
+  color: white;
 }

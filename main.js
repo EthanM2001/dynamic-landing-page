@@ -17,7 +17,6 @@ const getUserLocation = () => {
         return response.json();
       })
       .then((data) => {
-        console.log(data.main);
         let temp = data.main.temp;
         let town = data.name;
         let weather = data.weather[0].main;
