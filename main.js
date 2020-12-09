@@ -18,11 +18,12 @@ const getUserLocation = () => {
       })
       .then((data) => {
         let temp = data.main.temp;
+        let celsius = Math.round(temp - 273.15) + "℃";
         let town = data.name;
         let weather = data.weather[0].main;
         let country = data.sys.country;
         bottomLeft.innerHTML = town + ", " + country;
-        bottomRight.innerHTML = temp + ", " + weather;
+        bottomRight.innerHTML = celsius + ", " + weather;
       })
       .catch((err) => {
         console.log(err);
