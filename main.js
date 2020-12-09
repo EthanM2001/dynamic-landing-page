@@ -4,15 +4,14 @@ let bottomLeft = document.getElementById("bottom-left");
 let bottomRight = document.getElementById("bottom-right");
 
 const getUserLocation = () => {
-  let location = navigator.geolocation.getCurrentPosition((position) => {
+  navigator.geolocation.getCurrentPosition((position) => {
     let longitude = position.coords.longitude;
     longitude = Math.round(longitude);
     let latitude = position.coords.latitude;
     latitude = Math.round(latitude);
     let apiKey = "a0f5ebe9dcdf4301c052f393f0ccb485";
-    fetch(
-      `https://api.openweathermap.org/data/2.5/weather?lat=${latitude}&lon=${longitude}&appid=${apiKey}`
-    )
+    let url = "https://api.openweathermap.org/data/2.5/weather";
+    fetch(`${url}?lat=${latitude}&lon=${longitude}&appid=${apiKey}`)
       .then((response) => {
         return response.json();
       })
